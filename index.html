@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Специалист по Информационной Безопасности</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000;
+            color: #0F0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #0F0;
+        }
+
+        .terminal {
+            border: 2px solid #0F0;
+            padding: 20px;
+            margin-top: 20px;
+            white-space: pre-line;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Информационная Безопасность</h1>
+
+    <div class="terminal" id="terminal">
+        <!-- Пустой элемент, который будет заполняться текстом с помощью JavaScript -->
+    </div>
+
+    <script>
+        // Текст, который нужно вывести
+        var textToPrint = `
+Имя: Маслов Дмитрий Викторович
+Звание: Специалист по Информационной Безопасности
+Опыт работы: менее года
+Навыки:
+  - Анализ уязвимостей
+  - Разработка стратегий безопасности
+  - Мониторинг сетевой активности
+  - Обучение персонала по безопасности
+Образование: Высшее техническое
+Сертификации: CISSP, CEH, CompTIA Security+
+`;
+
+        // Элемент, в который будет выводиться текст
+        var terminalElement = document.getElementById("terminal");
+
+        // Функция для печати текста с эффектом задержки
+        function printTextWithDelay(text, delay) {
+            var index = 0;
+            var intervalId = setInterval(function() {
+                terminalElement.textContent += text[index++];
+                if (index === text.length) {
+                    clearInterval(intervalId);
+                }
+            }, delay);
+        }
+
+        // Вызываем функцию для печати текста с эффектом задержки
+        printTextWithDelay(textToPrint, 10);
+    </script>
+</body>
+</html>
